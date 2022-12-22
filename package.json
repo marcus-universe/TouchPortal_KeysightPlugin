@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "touchportal-api": "^3.2.1"
+  },
+  "name": "touchportal_keysightplugin",
+  "version": "1.0.0",
+  "description": "A plugin for touchportal to control websockets in keysight",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "touchportal",
+    "keysight",
+    "websockets",
+    "socketIO"
+  ],
+  "author": "Marcus Universe",
+  "license": "MIT"
+}
