@@ -1,0 +1,22 @@
+{
+  "sdk": 1,
+  "version": 1,
+  "name": "Keysight",
+  "id": "keysight",
+  "configuration": {
+    "colorDark": "#FF0000",
+    "colorLight": "#00FF00",
+    "parentCategory": "misc"
+  },
+
+  "actions": [{
+    "id": "tp_pl_action_001",
+    "prefix": "Plugin",
+    "name": "Execute action",
+    "type": "execute",
+    "description": "This action will play a beep sound.",
+    "execution_cmd": "powershell [console]::beep(200,500)",
+    "data": []
+  }],
+  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%TouchPortalKeysight\\touchportal_keysightplugin.exe"
+}
