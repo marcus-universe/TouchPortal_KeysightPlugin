@@ -1,0 +1,7 @@
+node_modules
+
+*.exe
+TouchPortalKeysight/*.exe
+TouchPortalKeysight/touchportal_keysightplugin.exe
+Installer/*.zip
+*.code-workspace

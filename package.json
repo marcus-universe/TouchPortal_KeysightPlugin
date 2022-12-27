@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "touchportal-api": "^3.2.1"
+  },
+  "name": "touchportal_keysightplugin",
+  "version": "0.1.0",
+  "description": "A plugin for touchportal to control websockets in keysight",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "runServer": "node src/server.js",
+    "renameEtry": "node -e \"require('fs').rename('TouchPortalKeysight/entry.json', 'TouchPortalKeysight/entry.tp', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "backrenameEtry": "node -e \"require('fs').rename('TouchPortalKeysight/entry.tp', 'TouchPortalKeysight/entry.json', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "build": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry"
+  },
+  "keywords": [
+    "touchportal",
+    "keysight",
+    "websockets",
+    "socketIO"
+  ],
+  "author": "Marcus Universe",
+  "license": "MIT"
+}
