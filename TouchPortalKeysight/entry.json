@@ -33,17 +33,7 @@
     ]
   }],
   "settings": [{
-      "name": "Set Websockets IP",
-      "default": "127.0.0.1",
-      "type": "text",
-      "maxLenght": 16,
-      "isPassword": false,
-      "minValue": 0,
-      "maxValue": 120,
-      "readOnly": false
-    },
-    {
-      "name": "Set Websockets Port",
+      "name": "Set Websockets Port (need restart of TP)",
       "default": "3000",
       "type": "text",
       "maxLenght": 16,
