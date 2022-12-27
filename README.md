@@ -19,7 +19,7 @@ This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for
 
 ## How can you help with the code?
 
-### 1. Fork the project
+### 1. Fork this repository
 
 ### 2. Install the npm dependencies
 
@@ -29,6 +29,7 @@ This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for
 
 `npm run build` creates a new touchportal_keysightplugin.tpp in the `Installer` folder.
 `npm run runServer` starts a localhost server on Port `3000` and listens to messages with the name `command` to test it.
+`npm run start` starts the index.js file for checking if the plugin is working.
 
 ### 4. Make a Pull request to submit your changes.
 
