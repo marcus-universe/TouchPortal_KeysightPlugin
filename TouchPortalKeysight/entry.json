@@ -17,7 +17,7 @@
         "id": "send_keysight_command",
         "prefix": "Send a command to Keysight",
         "name": "Send command to Keysight",
-        "type": "execute",
+        "type": "communicate",
         "tryInline": true,
         "format": "Send {$message$} to Keysight ",
         "data": [{
@@ -44,7 +44,7 @@
     },
     {
       "name": "Set Websockets Port",
-      "default": "8080",
+      "default": "3000",
       "type": "text",
       "maxLenght": 16,
       "isPassword": false,
