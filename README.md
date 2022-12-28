@@ -17,6 +17,34 @@
 
 This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for the piano visualizer [Keysight](https://store.steampowered.com/app/1325730/Keysight/) with the power of websockets.
 
+## How to use it?
+
+1. Install the TouchPortal_Keysight_Plugin.tpp in TouchPortal and restart TouchPortal.
+2. Install the Keysight_Icon_Pack.tpi
+<div align="left">
+<img src="./assets/importPlugin.png" alt="import Plugin" >
+<img src="./assets/importIconPack.png" alt="import Icon Pack" >
+</div>
+
+---
+
+3. Set in Keysight under System/Websockets/Inbound websocket the address to `http://localhost:3000` or to your port after `:` when you changed it. Event name is `command`.
+4. Now set what messages you wanna listen to and what there need to change.
+<div align="left">
+<img src="./assets/keysightSettings.png" alt="Keysight Settings" >
+</div>
+
+---
+
+5. Add to your TouchPortal Button a `Send to Keysight` Action and replace the String with you message.
+<div align="left">
+<img src="./assets/sendCommand.png" alt="TouchPortal Settings send command" >
+
+</div>
+6. Have fun jamming 😉
+
+---
+
 ## How can you help with the code?
 
 ### 1. Fork this repository
