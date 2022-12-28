@@ -6,18 +6,17 @@
     "touchportal-api": "^3.2.1"
   },
   "name": "touchportal_keysightplugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A plugin for touchportal to control websockets in keysight",
   "main": "src/index.js",
   "bin": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build_patch": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && git add . && git commit -am 'new version' && npm version patch",
-    "build_major": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && git add . && git commit -am 'new version' && npm version major",
-    "build_minor": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && git add . && git commit -am 'new version' && npm version minor",
+    "build_patch": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && npm version patch --no-git-tag-version",
+    "build_major": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && npm version major --no-git-tag-version",
+    "build_minor": "pkg --targets node12-win-x64 . && move touchportal_keysightplugin.exe TouchPortalKeysight && npm run renameEtry && 7z a -tzip Installer/touchportal_keysightplugin.tpp TouchPortalKeysight && npm run backrenameEtry && npm version minor --no-git-tag-version",
     "renameEtry": "node -e \"require('fs').rename('TouchPortalKeysight/entry.json', 'TouchPortalKeysight/entry.tp', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
     "backrenameEtry": "node -e \"require('fs').rename('TouchPortalKeysight/entry.tp', 'TouchPortalKeysight/entry.json', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\""
-
   },
   "keywords": [
     "touchportal",
