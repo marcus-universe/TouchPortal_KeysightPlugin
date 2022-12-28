@@ -17,6 +17,8 @@
 
 This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for the piano visualizer [Keysight](https://store.steampowered.com/app/1325730/Keysight/) with the power of websockets and socketIO.
 
+### [Download latest Version](https://github.com/marcus-universe/TouchPortal_KeysightPlugin/releases)
+
 ## How to use it?
 
 1. Install the TouchPortal_Keysight_Plugin.tpp in TouchPortal and restart TouchPortal.
