@@ -1,0 +1,4 @@
+name=Keysight Icon Pack
+author=Marcus Universe
+link=https://marcus-universe.de/
+bgcolor=#fff

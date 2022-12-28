@@ -6,8 +6,15 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 
+const Port = 3000;
 
-const io = require('socket.io')(3000, server, {cors: {origin: '*'}});
+// TPClient.on("Settings", (data) => {
+  // const portNumber = JSON.parse(data[0]);
+
+  // console.log(portNumber);
+// });
+
+const io = require('socket.io')(Port, server, {cors: {origin: '*'}});
 
 // const socket = io('ws://localhost:3000');
 

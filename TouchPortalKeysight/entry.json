@@ -33,7 +33,7 @@
     ]
   }],
   "settings": [{
-      "name": "Set Websockets Port (need restart of TP)",
+      "name": "Port",
       "default": "3000",
       "type": "text",
       "maxLenght": 16,
