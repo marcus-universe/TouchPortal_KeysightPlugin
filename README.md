@@ -9,6 +9,7 @@
 ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/marcus-universe/TouchPortal_KeysightPlugin/master?color=%238777F5&label=version&logo=https%3A%2F%2Fapi.iconify.design%2Ficon-park-solid%3Afile-conversion.svg&logoColor=%238777F5)
 ![GitHub forks](https://img.shields.io/github/forks/marcus-universe/TouchPortal_KeysightPlugin)
 ![GitHub Repo stars](https://img.shields.io/github/stars/marcus-universe/TouchPortal_KeysightPlugin?color=%23FFED01)
+![GitHub all releases](https://img.shields.io/github/downloads/marcus-universe/TouchPortal_KeysightPlugin/total?color=%23792af7&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/marcus-universe/TouchPortal_KeysightPlugin)
 
 </div>
