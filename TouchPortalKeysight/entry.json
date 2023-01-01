@@ -30,7 +30,16 @@
           "description": "The message to send to Keysight",
           "required": true
         }]
+      },
+      {
+        "id": "restart_keysight_server",
+        "prefix": "restarts the Keysight server",
+        "name": "Restart_Keysight_Server",
+        "type": "communicate",
+        "tryInline": true,
+        "format": "Keysight server restarted"
       }
+
     ]
   }],
   "settings": [{

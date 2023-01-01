@@ -1,36 +1,65 @@
-// const Client = require('socket.io-client');
-const TouchPortalAPI = require('touchportal-api');
+const TouchPortalAPI = require("touchportal-api");
 const TPClient = new TouchPortalAPI.Client();
-const pluginId = 'keysight';
-const express = require('express');
+const pluginId = "keysight";
+const express = require("express");
 const app = express();
-const server = require('http').createServer(app);
+let server = require("http").createServer(app);
 
-const Port = 3000;
+let Port = 3000;
 
-// TPClient.on("Settings", (data) => {
-  // const portNumber = JSON.parse(data[0]);
+let io = require("socket.io")(Port, server, { cors: { origin: "*" } });
 
-  // console.log(portNumber);
-// });
+//Restart Websocket Server
+function restartWebSocketServer() {
+  // Close the existing server
+  try {
+    server.close(() => {
+      console.log("WebSocket server closed");
 
-const io = require('socket.io')(Port, server, {cors: {origin: '*'}});
+      // Create a new server
+      try {
+        server = require("http").createServer(app);
+      } catch (error) {
+        console.log(error);
+      }
+      // Create a new Socket.IO instance
+      try {
+        io = require("socket.io")(Port, server, { cors: { origin: "*" } });
+        console.log("WebSocket server restarted");
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-// const socket = io('ws://localhost:3000');
+TPClient.on("Settings", (data) => {
+  const portNumber = parseInt(data[0].Port);
 
-// socket.on('connect', () => { console.log('Client connected'); });
-
-  TPClient.on("Action", (data) => {
-    if (data.actionId == "send_keysight_command") {
-      let command = data.data[0].value;
-      console.log(command + " was sent to Keysight");
-
-      // Send the command to the SocketIO server
-      io.emit('command', command);
+  if (portNumber !== NaN) {
+    if (portNumber !== Port) {
+      console.log(`Change Port from ${Port} to ${portNumber}`);
+      Port = portNumber;
+      restartWebSocketServer();
     }
-  });
+  } else {
+    console.log("Port Number is not a number");
+  }
+});
 
-  
-
+//#####################
+//Actions
+//#####################
+TPClient.on("Action", (data) => {
+  if (data.actionId == "send_keysight_command") {
+    let command = data.data[0].value;
+    console.log(command + " was sent to Keysight");
+    io.emit("command", command);
+  } else if (data.actionId == "restart_keysight_server") {
+    restartWebSocketServer();
+  }
+});
 
 TPClient.connect({ pluginId });
