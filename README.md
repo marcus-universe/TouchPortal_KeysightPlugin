@@ -43,7 +43,6 @@ This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for
 
 ![image](https://user-images.githubusercontent.com/26997041/210268422-5b92e5be-daf8-4382-9e92-b7591ac965e0.png)
 
-
 </div>
 
 ---
@@ -85,3 +84,9 @@ For restarting the Websocket Server
 - [TouchPortal API Docs](https://www.touch-portal.com/api/)
 - [Node JS SDK for TouchPortal](https://github.com/spdermn02/touchportal-node-api)
 - [Websockets Docs from Keysight](https://steamcommunity.com/sharedfiles/filedetails/?id=2218116335)
+
+## Special thanks to:
+
+Keysight Discord Server Members
+and
+HeapUnderflow for providing a [Keysight SocketIO Template](https://gitlab.com/HeapUnderflow/keysight-socket.io-template)
