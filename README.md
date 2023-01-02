@@ -35,13 +35,29 @@ This Plugin for [TouchPortal](https://www.touch-portal.com/) adding controls for
 4. Now set what messages you wanna listen to and what there need to change.
 <div align="left">
 <img src="assets/keysightSettings.PNG" alt="Keysight Settings" >
+
+<br>
+<br>
+
+**Ports can be changed here**
+
+![image](https://user-images.githubusercontent.com/26997041/210268422-5b92e5be-daf8-4382-9e92-b7591ac965e0.png)
+
+
 </div>
 
 ---
 
 5. Add to your TouchPortal Button a `Send to Keysight` Action and replace the String with you message.
 <div align="left">
-<img src="assets/sendCommand.PNG" alt="TouchPortal Settings send command" >
+
+For sending a message to Keysight
+
+![image](https://user-images.githubusercontent.com/26997041/210267856-4970f667-8173-414c-a75e-c3c5988ebebb.png)
+
+For restarting the Websocket Server
+
+![image](https://user-images.githubusercontent.com/26997041/210268184-954089ac-1f03-4182-a9f8-25c3626e40a5.png)
 
 </div>
 6. Have fun jamming 😉
