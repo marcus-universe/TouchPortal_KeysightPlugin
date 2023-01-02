@@ -12,9 +12,7 @@
     "id": "keysightmessages",
     "name": "Keysight",
     "imagepath": "%TP_PLUGIN_FOLDER%TouchPortalKeysight\\img\\keysight_logo.png",
-    "actions": [
-
-      {
+    "actions": [{
         "id": "send_keysight_command",
         "prefix": "Send a command to Keysight",
         "name": "Send command to Keysight",
@@ -46,7 +44,7 @@
       "name": "Port",
       "default": "3000",
       "type": "text",
-      "maxLenght": 16,
+      "maxLenght": 5,
       "isPassword": false,
       "minValue": 0,
       "maxValue": 120,
