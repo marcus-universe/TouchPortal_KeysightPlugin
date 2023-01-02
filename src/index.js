@@ -3,11 +3,19 @@ const TPClient = new TouchPortalAPI.Client();
 const pluginId = "keysight";
 const express = require("express");
 const app = express();
+
+// Create a new HTTP server
 let server = require("http").createServer(app);
 
+// Current Port
 let Port = 3000;
 
+// Create a new Socket.IO instance
 let io = require("socket.io")(Port, server, { cors: { origin: "*" } });
+
+//#####################
+//Functions
+//#####################
 
 //Restart Websocket Server
 function restartWebSocketServer() {
@@ -35,12 +43,16 @@ function restartWebSocketServer() {
   }
 }
 
+//Change Port
 function changePort(newPort) {
   Port = newPort;
   console.log(`Port changed to ${Port}`);
   restartWebSocketServer();
 }
 
+//#####################
+//Settings
+//#####################
 TPClient.on("Settings", (data) => {
   const portNumber = parseInt(data[0].Port);
 
@@ -67,6 +79,9 @@ TPClient.on("Action", (data) => {
   }
 });
 
+//#####################
+//Receive Messages from Keysight
+//#####################
 io.on("connection", (socket) => {
   socket.on("message", (message) => {
     console.log("Received message:", message);
