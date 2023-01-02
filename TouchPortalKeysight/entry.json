@@ -32,10 +32,10 @@
       {
         "id": "restart_keysight_server",
         "prefix": "restarts the Keysight server",
-        "name": "Restart_Keysight_Server",
+        "name": "Restart_Websocket_Server",
         "type": "communicate",
         "tryInline": true,
-        "format": "Keysight server restarted"
+        "format": "Websocket server restart"
       }
 
     ]
