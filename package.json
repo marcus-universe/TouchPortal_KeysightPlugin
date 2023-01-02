@@ -6,7 +6,7 @@
     "touchportal-api": "^3.2.1"
   },
   "name": "touchportal_keysightplugin",
-  "version": "2.2.2",
+  "version": "2.4.0",
   "description": "A plugin for touchportal to control websockets in keysight",
   "main": "src/index.js",
   "bin": "src/index.js",

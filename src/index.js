@@ -35,14 +35,19 @@ function restartWebSocketServer() {
   }
 }
 
+function changePort(newPort) {
+  Port = newPort;
+  console.log(`Port changed to ${Port}`);
+  restartWebSocketServer();
+}
+
 TPClient.on("Settings", (data) => {
   const portNumber = parseInt(data[0].Port);
 
   if (portNumber !== NaN) {
     if (portNumber !== Port) {
       console.log(`Change Port from ${Port} to ${portNumber}`);
-      Port = portNumber;
-      restartWebSocketServer();
+      changePort(portNumber);
     }
   } else {
     console.log("Port Number is not a number");
@@ -60,6 +65,12 @@ TPClient.on("Action", (data) => {
   } else if (data.actionId == "restart_keysight_server") {
     restartWebSocketServer();
   }
+});
+
+io.on("connection", (socket) => {
+  socket.on("message", (message) => {
+    console.log("Received message:", message);
+  });
 });
 
 TPClient.connect({ pluginId });
