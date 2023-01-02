@@ -1,7 +1,7 @@
 {
   "sdk": 1,
-  "version": 2,
-  "name": "keysight",
+  "version": 3,
+  "name": "Keysight",
   "id": "keysight",
   "configuration": {
     "colorDark": "#029e84",
