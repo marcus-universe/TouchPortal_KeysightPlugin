@@ -46,6 +46,16 @@
       "type": "text",
       "maxLenght": 5,
       "isPassword": false,
+      "minValue": 4,
+      "maxValue": 4,
+      "readOnly": false
+    },
+    {
+      "name": "Command_Name",
+      "default": "command",
+      "type": "text",
+      "maxLenght": 40,
+      "isPassword": false,
       "minValue": 0,
       "maxValue": 120,
       "readOnly": false

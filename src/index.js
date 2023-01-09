@@ -9,6 +9,7 @@ let server = require("http").createServer(app);
 
 // Current Port
 let Port = 3000;
+let commandName = "command";
 
 // Create a new Socket.IO instance
 let io = require("socket.io")(Port, server, { cors: { origin: "*" } });
@@ -49,12 +50,21 @@ function changePort(newPort) {
   console.log(`Port changed to ${Port}`);
   restartWebSocketServer();
 }
+//Change Command Name
+function changeCommandName(newCommandName) {
+  commandName = newCommandName;
+  console.log(`Command Name changed to ${commandName}`);
+}
 
 //#####################
 //Settings
 //#####################
 TPClient.on("Settings", (data) => {
   const portNumber = parseInt(data[0].Port);
+  const command = data[0].Command_Name;
+  if (command !== commandName) {
+    changeCommandName(command);
+  }
 
   if (portNumber !== NaN) {
     if (portNumber !== Port) {
@@ -73,7 +83,7 @@ TPClient.on("Action", (data) => {
   if (data.actionId == "send_keysight_command") {
     let command = data.data[0].value;
     console.log(command + " was sent to Keysight");
-    io.emit("command", command);
+    io.emit(commandName, command);
   } else if (data.actionId == "restart_keysight_server") {
     restartWebSocketServer();
   }
